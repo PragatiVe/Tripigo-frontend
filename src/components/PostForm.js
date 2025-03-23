@@ -8,7 +8,7 @@ const PostForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/posts', { title, description, location })
+    axios.post(`${process.env.REACT_APP_API_URL}/api/posts`, { title, description, location })
       .then(response => console.log(response.data))
       .catch(error => console.error(error));
   };

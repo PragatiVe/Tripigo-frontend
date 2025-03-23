@@ -5,7 +5,7 @@ const PostList = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/posts')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/posts`)
       .then(response => setPosts(response.data))
       .catch(error => console.error(error));
   }, []);
